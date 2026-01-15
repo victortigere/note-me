@@ -3,7 +3,7 @@ from flask_cors import CORS
 import os
 # Import your transcription function here
 # from transcription_service import transcribe_audio 
-from transcribe import transcribe_audio
+import transcribe 
 
 app = Flask(__name__)
 CORS(app)  # This enables React to make requests to Flask
@@ -30,7 +30,7 @@ def upload_audio():
     try:
         # 3. Call your AssemblyAI function
         # Replace 'YOUR_API_KEY' with your actual key
-        transcript_text = transcribe_audio(file_path)
+        transcript_text = transcribe.transcribe_audio(file_path)
         
         # 4. Return the text to React
         return jsonify({"transcript": transcript_text})
