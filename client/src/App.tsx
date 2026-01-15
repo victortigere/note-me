@@ -89,7 +89,7 @@ function App() {
       formData.append('audio', audioBlob, 'input_audio.webm');
 
       // Point this to your Flask server (usually port 5000)
-      const apiUrl = 'http://127.0.0.1:5000/upload-audio';
+      const apiUrl = https://note-me-server-mtri.onrender.com/upload-audio';
 
       const response = await fetch(apiUrl, {
         method: 'POST',
